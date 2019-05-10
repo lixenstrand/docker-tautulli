@@ -26,12 +26,12 @@ RUN \
  echo "**** install app ****" && \
  mkdir -p /app/tautulli && \
  if [ -z ${TAUTULLI_RELEASE+x} ]; then \
-	TAUTULLI_RELEASE=$(curl -sX GET "https://api.github.com/repos/Tautulli/Tautulli/releases/latest" \
+	TAUTULLI_RELEASE=$(curl -sX GET "https://api.github.com/repos/lixenstrand/Tautulli/releases/latest" \
 	| jq -r '. | .tag_name'); \
  fi && \
  curl -o \
  /tmp/tautulli.tar.gz -L \
-	"https://github.com/Tautulli/Tautulli/archive/${TAUTULLI_RELEASE}.tar.gz" && \
+	"https://github.com/lixenstrand/Tautulli/archive/${TAUTULLI_RELEASE}.tar.gz" && \
  tar xf \
  /tmp/tautulli.tar.gz -C \
 	/app/tautulli --strip-components=1 && \
